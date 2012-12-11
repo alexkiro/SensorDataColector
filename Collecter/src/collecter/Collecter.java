@@ -1,7 +1,6 @@
 package collecter;
 
 import java.io.File;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -106,40 +105,40 @@ public class Collecter {
     }
 
     /**
-     * Masoara acceleratia relativa a device-ului pe axele x,y,z in m/s^2
-     * <br/><br/> Se ia in calcul si atractia gravitationala, deci pentru un
-     * device care sta pe o suprafata plata, vor fi urmatoarele valori: <br/> x
-     * ~= 0.0 , y ~= 0.0 , z ~= 9.8 <br/><br/> Explicatie pentru cum sunt
-     * reprezentate axele gasiti <a
-     * href="http://developer.android.com/reference/android/hardware/SensorEvent.html">
-     * aici </a>.
-     *
-     * @param x
-     * @param y
-     * @param z
-     * @param timestamp
+* Masoara acceleratia relativa a device-ului pe axele x,y,z in m/s^2
+* <br/><br/> Se ia in calcul si atractia gravitationala, deci pentru un
+* device care sta pe o suprafata plata, vor fi urmatoarele valori: <br/> x
+* ~= 0.0 , y ~= 0.0 , z ~= 9.8 <br/><br/> Explicatie pentru cum sunt
+* reprezentate axele gasiti <a
+* href="http://developer.android.com/reference/android/hardware/SensorEvent.html">
+* aici </a>.
+*
+* @param x
+* @param y
+* @param z
+* @param timestamp
      */
     public void addAccelerometerData(double x, double y, double z, long timestamp) {
         addCoordElement("acc", x, y, z, timestamp);
     }
 
     /**
-     * Masoara campul magnetic ambiental pe cele 3 axe, valorile sunt in
-     * micro-Tesla (μT)
-     *
-     * @param x
-     * @param y
-     * @param z
-     * @param timestamp
+* Masoara campul magnetic ambiental pe cele 3 axe, valorile sunt in
+* micro-Tesla (μT)
+*
+* @param x
+* @param y
+* @param z
+* @param timestamp
      */
     public void addMagneticFieldData(double x, double y, double z, long timestamp) {
         addCoordElement("mag", x, y, z, timestamp);
     }
 
     /**
-     * Masoara rata de rotatie a device-ului pe cele trei axe <br/><br/> Rotatie
-     * este pozitiva in sensul invers acelor de ceasornic. <br/><br/> Fiecare
-     * parametru reprezinta valoarea angulara in radiani pe secunda
+* Masoara rata de rotatie a device-ului pe cele trei axe <br/><br/> Rotatie
+* este pozitiva in sensul invers acelor de ceasornic. <br/><br/> Fiecare
+* parametru reprezinta valoarea angulara in radiani pe secunda
      *
      * @param x
      * @param y
